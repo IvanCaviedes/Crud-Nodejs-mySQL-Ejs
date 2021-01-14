@@ -1,0 +1,55 @@
+<%- include ../layouts/header.ejs %> 
+<% if (messages.error) { %>
+<div class="alert alert-danger text-center" role="alert">
+  <%- messages.error %>
+</div>
+<% } %> <% if (messages.success) { %>
+<div class="alert alert-success text-center" role="alert">
+  <%- messages.success %>
+</div>
+<% } %>
+<div class="container">
+  <form action="/users/add" method="POST" name="form1">
+    <div class="row mb-3">
+      <label class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="name"
+          value="<%= name %>"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Age</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          name="age"
+          id="age"
+          value="<%= age %>"
+        />
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          name="age"
+          id="age"
+          value="<%= age %>"
+        />
+      </div>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button class="btn btn-primary" type="submit" value="Add">Button</button>
+    </div>
+  </form>
+</div>
+
+<%- include ../layouts/footer.ejs %>
